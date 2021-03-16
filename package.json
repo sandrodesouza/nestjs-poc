@@ -49,6 +49,7 @@
     "eslint-config-prettier": "^8.1.0",
     "eslint-plugin-prettier": "^3.3.1",
     "jest": "^26.6.3",
+    "lerna": "^4.0.0",
     "prettier": "^2.2.1",
     "supertest": "^6.1.3",
     "ts-jest": "^26.5.2",
@@ -80,8 +81,6 @@
     "moduleNameMapper": {
       "@app/fonasa/(.*)": "<rootDir>/libs/fonasa/src/$1",
       "@app/fonasa": "<rootDir>/libs/fonasa/src",
-      "@app/mailing/(.*)": "<rootDir>/libs/mailing/src/$1",
-      "@app/mailing": "<rootDir>/libs/mailing/src",
       "@app/epivigila/(.*)": "<rootDir>/libs/epivigila/src/$1",
       "@app/epivigila": "<rootDir>/libs/epivigila/src"
     }
