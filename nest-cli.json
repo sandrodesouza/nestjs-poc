@@ -1,0 +1,85 @@
+{
+  "collection": "@nestjs/schematics",
+  "sourceRoot": "apps/c19/src",
+  "projects": {
+    "fonasa": {
+      "type": "library",
+      "root": "libs/fonasa",
+      "entryFile": "index",
+      "sourceRoot": "libs/fonasa/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/fonasa/tsconfig.lib.json"
+      }
+    },
+    "minsalts": {
+      "type": "application",
+      "root": "apps/minsalts",
+      "entryFile": "main",
+      "sourceRoot": "apps/minsalts/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/minsalts/tsconfig.app.json"
+      }
+    },
+    "c19": {
+      "type": "application",
+      "root": "apps/c19",
+      "entryFile": "main",
+      "sourceRoot": "apps/c19/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/c19/tsconfig.app.json"
+      }
+    },
+    "seguimiento": {
+      "type": "application",
+      "root": "apps/seguimiento",
+      "entryFile": "main",
+      "sourceRoot": "apps/seguimiento/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/seguimiento/tsconfig.app.json"
+      }
+    },
+    "admin": {
+      "type": "application",
+      "root": "apps/admin",
+      "entryFile": "main",
+      "sourceRoot": "apps/admin/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/admin/tsconfig.app.json"
+      }
+    },
+    "forms": {
+      "type": "application",
+      "root": "apps/forms",
+      "entryFile": "main",
+      "sourceRoot": "apps/forms/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/forms/tsconfig.app.json"
+      }
+    },
+    "claveunica": {
+      "type": "application",
+      "root": "apps/claveunica",
+      "entryFile": "main",
+      "sourceRoot": "apps/claveunica/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/claveunica/tsconfig.app.json"
+      }
+    },
+  
+    "epivigila": {
+      "type": "library",
+      "root": "libs/epivigila",
+      "entryFile": "index",
+      "sourceRoot": "libs/epivigila/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/epivigila/tsconfig.lib.json"
+      }
+    }
+  },
+  "compilerOptions": {
+    "webpack": true,
+    "tsConfigPath": "apps/c19/tsconfig.app.json"
+  },
+  "monorepo": true,
+  "root": "apps/c19"
+}
