@@ -1,17 +1,30 @@
+import { Entity, Column, OneToMany } from 'typeorm';
+import { Forms } from '../../common/forms.interface';
+import { CreateRegionalDto } from '../dto/create-regional.dto';
+import { RegionalFamiliar } from './regional-familiar.entity';
 import {
-  Entity,
-  Column,
-  PrimaryGeneratedColumn,
-  CreateDateColumn,
-  UpdateDateColumn,
-} from 'typeorm';
+  Contains,
+  IsInt,
+  Length,
+  IsEmail,
+  IsFQDN,
+  IsDate,
+  Min,
+  Max,
+} from 'class-validator';
 
 @Entity()
-export class Regional {
-  @PrimaryGeneratedColumn()
-  id: number;
+export class Regional extends Forms {
+  constructor(createRegionalDto: CreateRegionalDto) {
+    super();
+    this.firstName = createRegionalDto?.apellidopaterno;
+    this.lastName = createRegionalDto?.apellidopaterno;
+    this.names = createRegionalDto?.names;
+    this.profile = createRegionalDto?.profile;
+  }
 
   @Column()
+  @Length(10, 20)
   firstName: string;
 
   @Column({ nullable: true })
@@ -20,9 +33,19 @@ export class Regional {
   @Column({ default: true })
   isActive: boolean;
 
-  @CreateDateColumn()
-  createdAt: Date;
+  @Column('simple-json')
+  profile: { name: string; nickname: string };
 
-  @UpdateDateColumn()
-  updatedAt: Date;
+  @Column('simple-array')
+  names: string[];
+
+  @OneToMany(
+    () => RegionalFamiliar,
+    (regionalFamiliar) => regionalFamiliar.regional,
+    {
+      eager: true,
+      cascade: true,
+    },
+  )
+  familiares: RegionalFamiliar[];
 }
